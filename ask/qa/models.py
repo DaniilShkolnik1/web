@@ -1,18 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime 
 
 # Create your models here.
 class Question(models.Model):
     title = models.CharField(max_length=30)
     text = models.TextField()
-    added_at = models.DateField()
-    rating = models.IntegerField()
+    added_at = models.DateField(default=datetime.now(), blank=True)
+    rating = models.IntegerField(11, default=0)
     author = models.CharField(max_length=30)
-    likes = models.IntegerField()
+    likes = models.IntegerField(11, default=0)
 
 class Answer(models.Model):
     text = models.TextField()
-    added_at = models.DateField()
+    added_at = models.DateField(default=datetime.now(), blank=True)
     question = models.TextField()
-    author = models.CharField()
+    author = models.CharField(max_length=30)
 
