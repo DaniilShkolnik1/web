@@ -14,5 +14,5 @@ class Answer(models.Model):
     text = models.TextField()
     added_at = models.DateField()
     question = models.TextField()
-    author = models.CharField()
+    author = models.CharField(max_length=30)
 
