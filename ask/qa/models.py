@@ -10,6 +10,7 @@ class Question(models.Model):
     rating = models.IntegerField(11, default=0)
     author = models.CharField(max_length=30)
     likes = models.IntegerField(11, default=0)
+    
 
 class Answer(models.Model):
     text = models.TextField()
@@ -17,3 +18,4 @@ class Answer(models.Model):
     question = models.TextField()
     author = models.CharField(max_length=30)
 
+    question = models.ForeignKey('Question')
