@@ -4,6 +4,7 @@ from datetime import datetime
 
 # Create your models here.
 class Question(models.Model):
+    question_id = models.IntegerField(11)
     title = models.CharField(max_length=30)
     text = models.TextField()
     added_at = models.DateField(default=datetime.now(), blank=True)
